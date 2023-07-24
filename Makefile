@@ -1,4 +1,4 @@
-## dcape-app-template Makefile
+## dcape-app-unbound Makefile
 ## This file extends Makefile.app from dcape
 #:
 
@@ -7,20 +7,16 @@ CFG                ?= .env
 CFG_BAK            ?= $(CFG).bak
 
 #- App name
-APP_NAME           ?= service-template
+APP_NAME           ?= service-unbound
 
 #- Docker image name
-IMAGE              ?= ghcr.io/lekovr/service-template
+IMAGE              ?= mvance/unbound
 
 #- Docker image tag
-IMAGE_VER          ?= 0.1.0
+IMAGE_VER          ?= 1.17.1
 
-# If you need database, uncomment this var
-#USE_DB              = yes
-
-# If you need user name and password, uncomment this var
-#ADD_USER            = yes
-
+#- Listen [IP]:PORT
+SERVICE_PORT       ?= 1053
 # ------------------------------------------------------------------------------
 
 # if exists - load old values
@@ -50,7 +46,3 @@ else
 endif
 
 # ------------------------------------------------------------------------------
-
-## Template support code, used once
-use-template:
-

@@ -4,6 +4,10 @@
 services:
   # This service will extend code from dcape
   app:
-    environment:
-      # Some var to keep YML struct
-      - DEBUG=yes
+    ports:
+      - ${SERVICE_PORT}:53/udp
+      - ${SERVICE_PORT}:53/tcp
+    volumes:
+      - ./unbound:/opt/unbound/etc/unbound
+    labels:
+      - traefik.enable=false
