@@ -1,4 +1,4 @@
-# dcape-app-template
+# dcape-app-unbound
 
 [![GitHub Release][1]][2] [![GitHub code size in bytes][3]]() [![GitHub license][4]][5]
 
@@ -8,12 +8,12 @@
 [4]: https://img.shields.io/github/license/dopos/dcape-app-template.svg
 [5]: LICENSE
 
-[upstream_name](https://upstream_url) application package for [dcape](https://github.com/dopos/dcape).
+[Unbound](https://www.nlnetlabs.nl/projects/unbound/about/) application package for [dcape](https://github.com/dopos/dcape-app-unbound).
 
 ## Upstream
 
-* Project: [upstream_name](https://upstream_url)
-* Docker: [template](https://hub.docker.com/r/template)
+* Project: [Unbound](https://www.nlnetlabs.nl/projects/unbound/about/)
+* Docker: [mvance/unbound](https://hub.docker.com/r/mvance/unbound)
 
 ## Requirements
 
@@ -38,15 +38,18 @@
 
 Run commands on deploy host with [dcape](https://github.com/dopos/dcape) installed:
 ```bash
-git clone --single-branch --depth 1 https://github.com/dopos/dcape-app-template.git
+git clone --single-branch --depth 1 https://github.com/dopos/dcape-app-unbound.git
 cd dcape-app-template
 make config-if
 ... <edit .env.sample>
 make up
 ```
+Then next edit default unbound config in ./unbound, `make reup` for apply.
 
 ## License
 
 Copyright 2023 Aleksei Kovrizhkin <lekovr+dopos@gmail.com>
+
+Authors: Aleksei Kovrizhkin <lekovr+dopos@gmail.com>, Andrey Pazychev <anp135+dopos@gmail.com>
 
 Licensed under the Apache License, Version 2.0 (the "[License](LICENSE)");
